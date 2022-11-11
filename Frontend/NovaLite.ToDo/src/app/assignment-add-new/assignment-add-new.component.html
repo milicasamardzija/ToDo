@@ -1,0 +1,37 @@
+<div class="example-card">
+    <mat-card-header>
+    <mat-card-title>Add new assignment</mat-card-title>   
+    </mat-card-header>
+    <mat-card-content class="contentCard">
+        <div><p>Subject: </p><mat-form-field class="inputFiledSubject"><input  matInput [(ngModel)] = "assignment.subject"></mat-form-field></div>
+        <div><p>Description: </p></div>
+        <div>
+            <mat-form-field class="textArea"><textarea matInput name="" id="" cols="50" rows="3" [(ngModel)] = "assignment.description"></textarea></mat-form-field>
+        </div>
+        <div>
+            <p>Set remainder:</p>
+        </div>
+        <div>
+            
+        </div>
+        <div>
+            <p>Add file:</p>
+            <input type="file" class="file-upload" [(ngModel)] = "file" (change)="onFileChange($event)">    
+        </div>
+        <div>
+            <p>Steps:</p>
+        </div>
+        <div>
+            <mat-form-field class="inputFiled" class="stepsInput"><input  matInput [(ngModel)] = "step.subject"></mat-form-field>
+            <mat-checkbox [(ngModel)]="step.completed" class="check"></mat-checkbox>
+            <button  mat-button color="primary" (click)="addStep()"><i class="fa fa-plus"></i></button>
+        </div>
+        <div *ngFor="let s of steps">
+            <p>{{s.subject}}<mat-checkbox [(ngModel)]="s.completed" style="margin-left: 1%;"></mat-checkbox> <button  mat-button color="primary" (click)="deleteStep(s)"><i class="fa fa-minus"></i></button></p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+        <button mat-raised-button color="accent" (click)="addAssignment()">Yes</button>
+        <button mat-raised-button color="primary" (click)="cancel()">No</button>
+    </mat-card-actions>
+</div>

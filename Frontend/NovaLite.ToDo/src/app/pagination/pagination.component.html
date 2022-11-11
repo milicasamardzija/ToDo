@@ -1,0 +1,8 @@
+<div class="pagination">
+    <button mat-button color="primary" class="prevButton" (click)="goTo(currentPage - 1)"><i class="fa fa-chevron-left fa-fw"></i></button>
+    <span *ngFor="let page of getPages()">  
+    <button (click)="goTo(page)" class="pageNumber" >{{page}}</button>
+    </span>
+    <button mat-button color="primary" class="nextButton" (click)="goTo(currentPage + 1)"><i class="fa fa-chevron-right fa-fw"></i></button>
+    <span class="text">Items per page</span> <input [(ngModel)]="itemsPerPage" class="pageSize" (keydown)="refresh()"> 
+</div>

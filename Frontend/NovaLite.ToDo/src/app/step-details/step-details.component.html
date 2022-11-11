@@ -1,0 +1,16 @@
+<h2 mat-dialog-title *ngIf="update === true">Change</h2>
+<h2 mat-dialog-title *ngIf="update === false">Add</h2>
+<mat-dialog-content>
+  <div>
+      <mat-card-content class="content">
+        <div><p><b>Subject:</b></p><mat-form-field class="input"><input  matInput [(ngModel)] = "step.subject"></mat-form-field>
+        <mat-checkbox [(ngModel)]="step.completed" style="margin-left: 10%;"></mat-checkbox></div>
+      </mat-card-content>
+      <mat-card-actions class="actions">
+        <button mat-raised-button color="accent" [mat-dialog-close]="true" class="changeButton" (click)="changeStep()">Yes</button>
+        <button mat-raised-button [mat-dialog-close]="true" color="primary">Close</button>
+        <button *ngIf="update === true"  mat-raised-button color="primary" (click)="deleteStep()"><i class="fa fa-trash-o"></i></button>
+      </mat-card-actions>
+  </div>
+</mat-dialog-content>
+

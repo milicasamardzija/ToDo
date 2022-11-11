@@ -1,0 +1,32 @@
+.actions {
+    position: absolute;
+    bottom: 0.5%;
+}
+
+.example-card{
+    height: 80%;
+}
+
+.textArea{
+    width: 80%;
+}
+
+p{
+    font-weight: 500;
+}
+
+.inputFiledSubject{
+    width: 80%;
+}
+
+.stepsInput {
+    width: 63%;
+}
+
+.check{
+    margin-left: 3%;
+}
+
+.contentCard{
+    margin-top: 2%;
+}

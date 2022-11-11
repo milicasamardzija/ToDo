@@ -1,0 +1,69 @@
+
+.example-card{
+    margin-left: 5%;
+    margin-right: 25%;
+    margin-top: 0.3%;
+    float: left;
+    height: 30%;
+    width: 30%;
+}
+
+.steps{
+    margin-top: 3%;
+    margin-left: 55%;
+    width: 40%;
+}
+
+input{
+    margin-top: 1%;
+}
+
+.prevButton{
+    margin-top: 1%;
+    margin-left: 10%;
+    border: 5px;
+    width: max-content;
+}
+
+.deleteButton{
+    margin-left: 15%;
+}
+
+.changeButton{
+    margin-left: 5%; 
+}
+
+.inputFiled{
+    width: 70%;
+}
+
+.dialog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.textArea{
+    width: 97%;
+}
+
+.cardStyle{
+    margin-left: 17%;
+    height: 30rem;
+    width: 20;
+}
+
+.paginationPosition{
+   position: absolute;
+   bottom: 5%;
+}
+
+.cardContent{
+    margin-left: 10%;
+    margin-top: 6%;
+}
+
+.addStep{
+    margin-left: 65%;
+}

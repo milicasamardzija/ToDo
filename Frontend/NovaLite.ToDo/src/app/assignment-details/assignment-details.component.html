@@ -1,0 +1,59 @@
+<div>
+    <div>
+        <mat-card class="example-card"> 
+            <mat-card-header>
+            <mat-card-title>Assignment</mat-card-title>   
+            </mat-card-header>
+            <mat-card-content>
+                <div><p><b>Subject:</b></p><mat-form-field class="inputFiled"><input  matInput [(ngModel)] = "assignment.subject"></mat-form-field>
+                <button mat-raised-button color="primary" data-toggle="modal" (click)="deleteAssignment()" class="deleteButton"><i class="fa fa-trash-o"></i></button></div>
+                <div><p><b>Description:</b> </p></div>
+                <div>
+                    <mat-form-field class="textArea"><textarea matInput name="" id="" cols="45" rows="7" [(ngModel)] = "assignment.description"></textarea></mat-form-field>
+                </div>
+                <div *ngIf="assignment.isExpired === false">
+                    <p><b>Set remainder:</b></p>
+                </div>
+                <div *ngIf="assignment.isExpired === false">
+                    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date & time" [(ngModel)]="assignment.reminder">
+                    <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                    <ngx-mat-datetime-picker #picker ></ngx-mat-datetime-picker>
+                </div>
+                <div *ngIf="assignment.isExpired === true">
+                    <p><b>Had reminder:</b> {{assignment.reminder | date:'medium'}}</p>
+                </div>
+                <div *ngIf="assignment.attachment === null">
+                    <input type="file" class="file-upload" [(ngModel)] = "file" (change)="onFileChange($event)">
+                </div>
+                <div *ngIf="assignment.attachment != null">
+                    <p *ngIf="change===false"><b>File:</b> {{assignment.attachment.name}}<button mat-button color="primary" (click)="changeAttachment()"><i class="fa fa-window-close" style="margin-left:0rem"></i></button><button  mat-button color="primary" (click)="downloadAttachment(assignment.attachment.name)"><i class="fa fa-download" ></i></button></p>
+                    <input *ngIf="change===true" type="file" class="file-upload" [(ngModel)] = "file" (change)="onFileChange($event)">
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" class="changeButton" (click)="changeAssignment()">Yes</button>
+                <button mat-raised-button color="primary" class="changeButton" (click)="cancel()">No</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="steps">
+        <mat-card class="cardStyle"> 
+            <mat-card-header>
+                <mat-card-title>Steps</mat-card-title>
+                <button mat-raised-button color="accent" class="addStep" (click)="showDialog(this.step,false)">Add</button>   
+            </mat-card-header>
+            <mat-card-content class="cardContent">
+                <div *ngFor="let step of steps">
+                    <p (click)="showDialog(step, true)">{{step.subject}} <mat-checkbox [(ngModel)]="step.completed" style="margin-left: 1%;" (click)="$event.preventDefault()"></mat-checkbox></p>      
+                </div>
+                <app-pagination  class="paginationPosition" (pageChangedEvent)="onPageChanged($event)" [totalItems]="totalSteps"></app-pagination>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+</div>
+
+
+
+
+

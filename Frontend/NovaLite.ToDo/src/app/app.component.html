@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<mat-toolbar class="toolbar">
+    <span class="text"><i>{{user.name}}</i></span>
+    <button mat-raised-button color="accent" class="logout" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

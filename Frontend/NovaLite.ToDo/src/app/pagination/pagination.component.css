@@ -1,0 +1,49 @@
+.pagination{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+
+.pageNumber{
+    border-radius: 70%;
+    border: 1pt;
+    border-color: cornflowerblue;
+    background-color: #d4e3e4;
+    text-align: center
+}
+
+span{
+    margin-left: 1%;
+}
+
+.prevButton{
+    background-color: rgba(126, 204, 240, 0.719);
+    border: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.text{
+    font-size: 90%;
+    margin-left: 1%; 
+    color: blue;
+    font-style: italic;
+}
+
+.nextButton{
+    background-color: rgba(126, 204, 240, 0.719);
+    border: 5px; 
+    margin-left: 1%;
+    width: fit-content;
+}
+
+.pageSize{
+    margin-left: 2%; 
+    width: 3%;
+}
+
+input{
+    border-radius: 15%;
+    border-color: rgba(126, 204, 240, 0.719);
+}
